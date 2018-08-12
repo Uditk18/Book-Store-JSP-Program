@@ -1,3 +1,5 @@
+//DAO interface
+
 package com.cg.dao;
 
 import java.util.Collection;
