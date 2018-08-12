@@ -1,3 +1,5 @@
+//Controller program which acts as a servlet for the book cart program
+
 package com.cg.controller;
 
 import java.io.IOException;
@@ -35,13 +37,14 @@ public class AppController extends HttpServlet {
 		double sum=0.0;
 
 		switch (action) {
+			//Action to display home page of the cart system
 		case "/home.app":
 			Collection<bookPojo> book = service.viewAllHome();
 			request.setAttribute("books", book);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
 			dispatcher.forward(request, response);
 			break;
-
+			//Action which controls what happens when an item is added to the cart
 		case "/addToCart.app":
 			int id = Integer.parseInt(request.getParameter("itemId"));
 			book = service.viewAllHome();
@@ -61,7 +64,7 @@ public class AppController extends HttpServlet {
 			session.setAttribute("sum",sum);
 			response.sendRedirect("home.app");
 			break;
-
+			//View cart after adding the item to the cart
 		case "/viewCart.app":
 			book = service.viewCart();
 			session.setAttribute("count", book);
@@ -74,7 +77,7 @@ public class AppController extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("viewCart.jsp");
 			dispatcher.forward(request, response);
 			break;
-		
+			// Deleting an item from the cart
 		case "/deleteFromCart.app":
 			int id1=Integer.parseInt(request.getParameter("itemId"));
 			bookObj = null;
