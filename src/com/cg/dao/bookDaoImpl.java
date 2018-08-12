@@ -1,3 +1,5 @@
+//Implementation of dao class which handles the working methods and data required for the program
+
 package com.cg.dao;
 
 import java.util.Collection;
