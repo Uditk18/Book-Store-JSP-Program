@@ -1,3 +1,5 @@
+<!-- Home page for the cart page. User can see the list of book available-->
+
 <%@page import="com.cg.pojo.bookPojo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
